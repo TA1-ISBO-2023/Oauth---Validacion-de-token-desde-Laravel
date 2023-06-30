@@ -15,7 +15,7 @@ class EmpanadaFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->randomElement(['Jamon y Queso','Carne','Cheddar y Panceta','Pollo y cebolla']),
+            'nombre' => $this->faker->randomElement(['Jamon y Queso','Carne','Cheddar y Panceta','Pollo y cebolla']),
             'precio' => $this->faker->numberBetween(100,200)
             
         ];
