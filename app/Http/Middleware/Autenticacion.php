@@ -20,6 +20,10 @@ class Autenticacion
     public function handle(Request $request, Closure $next)
     {
 
+        if(!$request -> hasHeader("Authorization"))
+            return response(['message' => 'Not Authenticated'], 401);
+
+
         $token = explode(" ", $request -> header("Authorization"))[1];
         if(Cache::has($token)){
             return $next($request);
